@@ -1,0 +1,4 @@
+rawpy==0.28.0
+numpy>=2.4
+opencv-python-headless==5.0.0.93
+pillow>=12

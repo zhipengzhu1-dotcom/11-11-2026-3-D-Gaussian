@@ -1,0 +1,8 @@
+# Python 3.12. Install CUDA PyTorch first, e.g.
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0
+numpy>=2.4
+opencv-python==5.0.0.93
+scipy==1.18.1
+exifread==3.5.1
+pillow>=12

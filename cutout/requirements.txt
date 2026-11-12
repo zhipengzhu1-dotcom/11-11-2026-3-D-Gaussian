@@ -1,0 +1,8 @@
+# CUDA PyTorch first (see pose/requirements.txt). SAM2 comes from transformers' built-in port.
+torch==2.11.0
+transformers==5.15.0
+opencv-python==5.0.0.93
+numpy>=2.4
+pillow>=12
+# only for try_birefnet.py (the BiRefNet comparison that was not used)
+rembg==2.0.87

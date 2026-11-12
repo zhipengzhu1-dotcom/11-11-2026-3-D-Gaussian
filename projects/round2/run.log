@@ -1,0 +1,42 @@
+
+== fit ==
+using frame_times: shot spacing per ring (median intervals): [63.2, 57.1, 65.6] for [64, 58, 64] gaps
+189 frames 1984x1664, 3 rings [(0, 65), (65, 124), (124, 189)]
+f 15031 px, start distances mm [363.1, 359.2, 341.9], grid half 12.0 mm, centre height 4.04 mm, mask downsample 2
+ring 0: A 373.6 B 161.3 elev 25.6 deg  period -43.89 frames  drift (7,-7) px  rms 3.4 px
+ring 1: A 376.2 B 88.8 elev 13.6 deg  period -43.89 frames  drift (0,26) px  rms 3.2 px
+ring 2: A 391.4 B 25.6 elev 3.8 deg  period -43.67 frames  drift (68,-7) px  rms 5.2 px
+offset from axis (mm): [9.03 8.99 8.9 ]
+step     0 mse 0.12575 elev [25.57 13.65  3.75] dist [363.1 359.2 341.9] jit px rms 0.00
+step  1000 mse 0.00055 elev [25.95 15.08  4.5 ] dist [363.1 360.2 344.7] jit px rms 3.58
+step  2000 mse 0.00042 elev [26.03 15.1   4.51] dist [363.1 360.  344.1] jit px rms 3.69
+step  3000 mse 0.00044 elev [26.08 15.1   4.5 ] dist [363.1 360.1 344.1] jit px rms 3.77
+step  4000 mse 0.00045 elev [26.07 15.12  4.49] dist [363.1 360.  344. ] jit px rms 3.82
+step  5000 mse 0.00039 elev [26.07 15.13  4.51] dist [363.1 359.9 344.1] jit px rms 3.85
+step  5999 mse 0.00034 elev [26.08 15.13  4.52] dist [363.1 359.9 344.1] jit px rms 3.87
+ring 0: IoU mean 0.9935 min 0.9855 | elev 26.1 deg dist 363 mm | step median -8.22 deg, range -8.71..-7.70
+ring 1: IoU mean 0.9931 min 0.9878 | elev 15.1 deg dist 360 mm | step median -8.20 deg, range -8.90..-7.44
+ring 2: IoU mean 0.9925 min 0.9803 | elev 4.5 deg dist 344 mm | step median -8.26 deg, range -8.72..-7.28
+fit passed all gates
+
+== export ==
+189 cameras, 86364 init points, hull extent mm (z,y,x): [ 7.6 18.8 10.6]
+
+== check ==
+
+== check score ==
+PSNR (object crop) mean 26.51 dB over 24 held-out views | by third: 26.87 26.63 26.03
+
+== final ==
+
+== viewer ==
+splat-transform v3.10.1 (4593166)
+▸ [2/2] Output <root>\projects\round2\final-viewer.html
+  · 151K gaussians · 3 SH bands
+  ▸ k-means [####################] 0.818s
+  ▸ Writing
+    · final-viewer.html (9.7MB)
+done in 2.935s  [peak cpu=1.25GB gpu=43.1MB]
+
+done: <root>\projects\round2
+exit 0
