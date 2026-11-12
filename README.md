@@ -33,7 +33,7 @@ What the photos do give reliably is the capsule's **outline**. As the table turn
 
 ### Download the raw photos
 
-The 189 Sony `.ARW` files (6.8 GB) are attached to the [**`round2-raw` release**](../../releases/tag/round2-raw) as four zip parts. `SHA256SUMS.txt` there lists a checksum for every file. Unzip all the parts into `assets/Round-2/`.
+The 189 Sony `.ARW` files (6.8 GB) are attached to the [**`round2-raw` release**](../../releases/tag/round2-raw) as four zip parts. `SHA256SUMS.txt` there lists a checksum for every file. Unzip all the parts into `assets/`; each zip already contains a `Round-2/` folder, so the files land in `assets/Round-2/`. To verify them, run `sha256sum -c SHA256SUMS.txt` from `assets/`.
 
 ## Pipeline
 
@@ -105,7 +105,7 @@ Tested on Windows 11 with an RTX 5090 (CUDA 12.8). `run_turntable.py` calls `bru
 
 ## Reproduce
 
-Run these from the repo root after unzipping the raw photos into `assets/Round-2/`.
+Run these from the repo root once the raw photos are in `assets/Round-2/`.
 
 ```bash
 # 1. Develop the raws with one fixed recipe (the camera's white balance was on Auto and drifts)
