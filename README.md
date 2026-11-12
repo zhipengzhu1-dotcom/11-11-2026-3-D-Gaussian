@@ -227,3 +227,7 @@ docs/         handoff notes and capture notes
 - The printed "PC16" and the highlights are softer than in the photos. The lights were fixed to the room while the capsule turned.
 - Views from above ~26° or below ~4° were never photographed, so they look worse in the viewer.
 - The camera heights were not recorded at capture time. They come from the solver and agree with an independent estimate from the silhouette sizes (~23°, ~12°, ~3°).
+
+## License
+
+[MIT](LICENSE). This covers the code, settings, documentation and results in this repository, and the raw photos in the `round2-raw` release. The third-party tools and models listed above keep their own licenses.
