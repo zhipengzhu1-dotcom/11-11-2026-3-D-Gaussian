@@ -72,6 +72,32 @@ It runs these stages in order and stops at the first gate that fails:
 | `final` | trains Brush for 30,000 iterations on all views | `final.ply` exists |
 | `viewer` | exports the self-contained HTML viewer | |
 
+## Hardware
+
+### Minimum recommended
+
+| Part | Minimum recommended | Why |
+|---|---|---|
+| OS | Windows 10/11, 64-bit | `run_turntable.py` calls the Windows build of Brush (`brush_app.exe`) |
+| GPU | NVIDIA with CUDA and **12 GB VRAM** (e.g. RTX 3060 12 GB, RTX 4070) | SAM 2 tracking peaks at 8.1 GiB, plus whatever the desktop already uses. SAM 2 and the pose fit run on `cuda`, so a CPU-only or non-NVIDIA machine won't work as written |
+| RAM | **16 GB** (32 GB is more comfortable) | the largest step peaks at 5.3 GiB |
+| CPU | 8 cores / 16 threads | raw development runs up to 12 processes in parallel; fewer cores just make it slower |
+| Disk | **35 GB free**, SSD preferred | raws 6.8 GB plus the zips while you unzip them 6.8 GB, developed PNGs 1.7 GB, cutouts 2.1 GB, two Python venvs ~10 GB, ooosplat engines and the SAM 2 weights ~2.5 GB |
+
+These minimums are worked out from the peaks measured below; the pipeline was only run on the machine below. Brush itself is light (under 1 GiB of extra VRAM at this resolution), so the GPU requirement comes from SAM 2.
+
+### Measured on the test machine
+
+RTX 5090 32 GB, 24 CPU threads, 64 GB RAM, Windows 11. Peaks are above what the idle desktop already used.
+
+| Step | Peak VRAM | Peak RAM | Time |
+|---|---|---|---|
+| Raw development, 12 frames in parallel | — | 5.3 GiB | 35 s per 12 frames (~9 min for 189) |
+| SAM 2 tracking, one ring of 65 frames | 8.1 GiB | 3.9 GiB | 44 s, including model load |
+| Pose fit (`fit` stage) | 3.4 GiB | 3.0 GiB | 2.6 min |
+| Brush, 6,000-iteration check run | 0.8 GiB | 2.4 GiB | 61 s |
+| Whole `run_turntable.py` (prep through viewer) | — | — | ~25 min |
+
 ## Setup
 
 Tested on Windows 11 with an RTX 5090 (CUDA 12.8). `run_turntable.py` calls `brush_app.exe`, so the train stages are Windows-only as written. The other stages are plain Python.
